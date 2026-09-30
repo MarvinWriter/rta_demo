@@ -3,19 +3,22 @@ extends CharacterBody2D
 
 enum State {IDLE, WALK, RUN}
 
+var current_state := State.IDLE
+
 const SPEED = 150.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var current_state := State.IDLE
-var facing_direction: Vector2
+@export var can_move: bool = true
 
+var facing_direction: Vector2 
 var run_multiplier := 1.40
 
 func _physics_process(delta: float) -> void:
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	if not can_move:
+		return
+	
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	direction = direction.normalized()
