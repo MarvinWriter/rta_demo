@@ -2,7 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 
-enum State {IDLE, WALK, RUN}
+signal in_event
+
+enum State {IDLE, WALK, RUN,}
 
 const SPEED = 150.0
 

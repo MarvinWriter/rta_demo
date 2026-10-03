@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://ba0u6hx1b2x13" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://c8qfxygwr5bw8" path="res://Assets/test_characters.png" id="1_l8h54"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4ak4"]
-radius = 7.9999995
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ntmi"]
+radius = 8.0
 height = 24.0
 
 [sub_resource type="Animation" id="Animation_gwnis"]
@@ -400,7 +400,7 @@ region_rect = Rect2(176, 0, 32, 48)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=992246113]
 position = Vector2(0, -8)
 rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_i4ak4")
+shape = SubResource("CapsuleShape2D_4ntmi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1141597037]
 libraries/ = SubResource("AnimationLibrary_k53q1")
