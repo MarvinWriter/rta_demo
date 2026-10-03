@@ -2,15 +2,16 @@
 
 [ext_resource type="TileSet" uid="uid://c66ishschgm75" path="res://Assets/Tilesets/test_tilesets.tres" id="1_00vsl"]
 [ext_resource type="PackedScene" uid="uid://bklhcvy3a6vy5" path="res://Player/player.tscn" id="2_00vsl"]
-[ext_resource type="PackedScene" uid="uid://bbk034guifmxd" path="res://InteractionZone/interaction_zone.tscn" id="3_4k50d"]
-[ext_resource type="Script" uid="uid://cxl8ute7n0qwo" path="res://Levels/teleport.gd" id="4_i4ak4"]
-[ext_resource type="Script" uid="uid://dvjw65iryngs7" path="res://Levels/fuck_you.gd" id="5_3158n"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2va7"]
-size = Vector2(40, 8)
+[ext_resource type="PackedScene" uid="uid://bbk034guifmxd" path="res://Tools/InteractionZone/interaction_zone.tscn" id="3_4k50d"]
+[ext_resource type="Script" uid="uid://cc2j8i5iac4xp" path="res://Levels/Teleport.gd" id="3_i4ak4"]
+[ext_resource type="FontFile" uid="uid://dpmv3vrc18g6s" path="res://Assets/Fonts/PixeloidSans-lxa3y.ttf" id="4_3158n"]
+[ext_resource type="Script" uid="uid://cl4qhujguh1cr" path="res://Tools/InteractionZone/fuck_you.gd" id="6_ub4j8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2dwb"]
 size = Vector2(40, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2va7"]
+size = Vector2(40, 7)
 
 [node name="TestLevel" type="Node2D" unique_id=1261839463]
 
@@ -28,17 +29,40 @@ position = Vector2(149, 92)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1261149455]
 position = Vector2(0, -21)
 
-[node name="Teleport" parent="." unique_id=1724193469 instance=ExtResource("3_4k50d")]
-position = Vector2(216, 0)
-script = ExtResource("4_i4ak4")
-zone_name = "Переместиться?"
+[node name="Door" type="Area2D" parent="." unique_id=1724193469]
+unique_name_in_owner = true
+position = Vector2(216, 3)
+collision_mask = 2
+script = ExtResource("3_i4ak4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport" unique_id=2065997432]
+[node name="Label" type="Label" parent="Door" unique_id=855851159]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_top = -56.0
+offset_right = 28.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_3158n")
+theme_override_font_sizes/font_size = 9
+text = "Взаимодействие"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1491807226]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_t2dwb")
+
+[node name="InteractionZone" parent="." unique_id=1081901946 instance=ExtResource("3_4k50d")]
+position = Vector2(152, -12)
+script = ExtResource("6_ub4j8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=819199697]
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_m2va7")
 
-[node name="FuckYou" parent="." unique_id=1677790007 instance=ExtResource("3_4k50d")]
-position = Vector2(152, -16)
-script = ExtResource("5_3158n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FuckYou" unique_id=1450034509]
-shape = SubResource("RectangleShape2D_t2dwb")
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
+[connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]

@@ -1,18 +1,20 @@
+class_name Player
 extends CharacterBody2D
 
 
 enum State {IDLE, WALK, RUN}
 
-var current_state := State.IDLE
-
 const SPEED = 150.0
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+var run_multiplier := 1.40
 
 @export var can_move: bool = true
 
-var facing_direction: Vector2 
-var run_multiplier := 1.40
+var facing_direction: Vector2
+var current_state := State.IDLE
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 func _physics_process(delta: float) -> void:
 

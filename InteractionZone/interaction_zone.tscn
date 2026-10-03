@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bbk034guifmxd"]
+
+[ext_resource type="Script" uid="uid://c5r734bhakrxa" path="res://InteractionZone/interaction_zone.gd" id="1_0xpit"]
+[ext_resource type="FontFile" uid="uid://dpmv3vrc18g6s" path="res://Assets/Fonts/PixeloidSans-lxa3y.ttf" id="1_coyh5"]
+
+[node name="InteractionZone" type="Area2D" unique_id=1724193469]
+collision_mask = 2
+script = ExtResource("1_0xpit")
+
+[node name="Label" type="Label" parent="." unique_id=855851159]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_top = -56.0
+offset_right = 28.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_coyh5")
+theme_override_font_sizes/font_size = 9
+text = "Взаимодействие"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
