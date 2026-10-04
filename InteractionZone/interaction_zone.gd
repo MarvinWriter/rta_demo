@@ -13,9 +13,11 @@ var player: Player
 func _ready() -> void:
 	label.text = zone_name
 
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interaction") and player_in_zone:
 		interaction()
+
 
 func _on_body_entered(body: Player) -> void:
 	player = body
@@ -23,11 +25,13 @@ func _on_body_entered(body: Player) -> void:
 	label.show()
 	print("Player IN")
 
+
 func _on_body_exited(body: Player) -> void:
 	player_in_zone = false
 	label.hide()
 	label.text = zone_name
 	print("Player OUT")
+
 
 func interaction():
 	pass

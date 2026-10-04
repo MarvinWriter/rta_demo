@@ -2,8 +2,6 @@ class_name Player
 extends CharacterBody2D
 
 
-signal in_event
-
 enum State {IDLE, WALK, RUN,}
 
 const SPEED = 150.0
@@ -18,9 +16,22 @@ var current_state := State.IDLE
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
+func _ready() -> void:
+	GameManager.changed_gamestate.connect(can_player_move)
+
+
 func _physics_process(delta: float) -> void:
 
 	if not can_move:
+		match facing_direction:
+			Vector2.DOWN:
+				animation_player.play("idle_down")
+			Vector2.UP:
+				animation_player.play("idle_up")
+			Vector2.LEFT:
+				animation_player.play("idle_left")
+			Vector2.RIGHT:
+				animation_player.play("idle_right")
 		return
 	
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -41,6 +52,7 @@ func _physics_process(delta: float) -> void:
 	state_machine(direction)
 
 	move_and_slide()
+
 
 func state_machine(direction):
 	match current_state:
@@ -92,3 +104,10 @@ func state_machine(direction):
 						animation_player.play("run_right")
 				
 				velocity = direction * (SPEED * run_multiplier)
+
+
+func can_player_move(new_gamestate: GameManager.GameState):
+	
+	can_move = (new_gamestate == GameManager.GameState.EXPLORATION)
+	
+	print("Дошёл до изменения возможности ходить")

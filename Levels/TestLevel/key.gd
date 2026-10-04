@@ -6,10 +6,11 @@ extends InteractionZone
 
 
 func interaction():
-	if GameManager.test_flags.has_key:
-		print("У вас уже есть ключ")
-	else:
+	if not GameManager.test_flags.has_key:
 		GameManager.test_flags.has_key = true
 		collision.disabled = true
 		sprite.hide()
-		print("Вы взяли ключ")
+
+	GameManager.set_gamestate(GameManager.GameState.DIALOG)
+	await get_tree().create_timer(1.0).timeout
+	GameManager.set_gamestate(GameManager.GameState.EXPLORATION)

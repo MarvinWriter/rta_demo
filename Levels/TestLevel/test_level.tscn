@@ -3,9 +3,9 @@
 [ext_resource type="TileSet" uid="uid://c66ishschgm75" path="res://Assets/Tilesets/test_tilesets.tres" id="1_00vsl"]
 [ext_resource type="PackedScene" uid="uid://bklhcvy3a6vy5" path="res://Player/player.tscn" id="2_00vsl"]
 [ext_resource type="PackedScene" uid="uid://bbk034guifmxd" path="res://InteractionZone/interaction_zone.tscn" id="3_4k50d"]
-[ext_resource type="Script" uid="uid://cxl8ute7n0qwo" path="res://Levels/teleport.gd" id="4_i4ak4"]
-[ext_resource type="Script" uid="uid://dvjw65iryngs7" path="res://Levels/fuck_you.gd" id="5_3158n"]
-[ext_resource type="Script" uid="uid://c2mgs7eeinnqv" path="res://Levels/key.gd" id="6_pvdih"]
+[ext_resource type="Script" uid="uid://cxl8ute7n0qwo" path="res://Levels/TestLevel/teleport.gd" id="4_i4ak4"]
+[ext_resource type="Script" uid="uid://dvjw65iryngs7" path="res://Levels/TestLevel/fuck_you.gd" id="5_3158n"]
+[ext_resource type="Script" uid="uid://c2mgs7eeinnqv" path="res://Levels/TestLevel/key.gd" id="6_pvdih"]
 [ext_resource type="Texture2D" uid="uid://b8w874u0c781w" path="res://icon.svg" id="7_7e6fp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2va7"]
