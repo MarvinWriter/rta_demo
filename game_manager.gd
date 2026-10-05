@@ -2,6 +2,7 @@ extends Node
 
 
 signal changed_gamestate(new_gamestate: GameState)
+signal level_change_requested(path: String, spawn_point_name: String, facing: Vector2)
 
 enum GameState {
 	EXPLORATION,
@@ -20,20 +21,16 @@ var test_flags: Dictionary = {
 	"has_key": false,
 }
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func set_gamestate(new_gamestate: GameState):
 	current_gamestate = new_gamestate
 	gamestate_machine()
 	changed_gamestate.emit(new_gamestate)
+
+
+func request_level_change(path: String, spawn_point_name: String, facing: Vector2):
+	set_gamestate(GameState.LOADING)
+	level_change_requested.emit(path, spawn_point_name, facing)
 
 
 func gamestate_machine():
