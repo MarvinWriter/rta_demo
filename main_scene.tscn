@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2wd88dnh8ph5" path="res://Levels/DevLevel/dev_level.tscn" id="1_0f027"]
 [ext_resource type="Script" uid="uid://bjvpoua06yrk5" path="res://main_scene.gd" id="1_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://bklhcvy3a6vy5" path="res://Player/player.tscn" id="2_2c62f"]
+[ext_resource type="PackedScene" uid="uid://uky4o6t5a2m" path="res://LoadingScreen/loading_screen.tscn" id="4_d5x1h"]
 
 [node name="MainScene" type="Node2D" unique_id=258610025]
 script = ExtResource("1_gyfs4")
@@ -14,4 +15,10 @@ script = ExtResource("1_gyfs4")
 [node name="Player" parent="." unique_id=2068356474 instance=ExtResource("2_2c62f")]
 position = Vector2(344, 284)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1374375021]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1942788596]
+position = Vector2(0, -26)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1054339832]
+
+[node name="LoadingScreen" parent="UI" unique_id=1634860794 instance=ExtResource("4_d5x1h")]
+visible = false

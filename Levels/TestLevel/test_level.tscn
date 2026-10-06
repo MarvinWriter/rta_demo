@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b8w874u0c781w" path="res://icon.svg" id="7_7e6fp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2va7"]
-size = Vector2(40, 8)
+size = Vector2(40, 4)
 
 [sub_resource type="GDScript" id="GDScript_fcxcq"]
 script/source = "extends InteractionZone
@@ -19,7 +19,7 @@ func interaction():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2dwb"]
-size = Vector2(40, 8)
+size = Vector2(40, 4)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2dwb"]
 radius = 16.0

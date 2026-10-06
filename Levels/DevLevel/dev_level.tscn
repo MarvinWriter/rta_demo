@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dq8dv38i0ayx6" path="res://Levels/DevLevel/TestSchoolDoors.gd" id="4_6xnm1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2dwb"]
-size = Vector2(40, 8)
+size = Vector2(40, 4)
 
 [node name="DevLevel" type="Node2D" unique_id=1235299935]
 
