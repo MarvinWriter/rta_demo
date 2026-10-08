@@ -12,7 +12,6 @@ func change_level(path: String, spawn_point_name: String, facing: Vector2):
 	$UI/LoadingScreen/AnimationPlayer.play("fade_in")
 	await $UI/LoadingScreen/AnimationPlayer.animation_finished
 	$UI/LoadingScreen/AnimationPlayer.play("loading")
-	await get_tree().create_timer(1.0).timeout
 	if $LevelHolder.get_child_count() > 0:
 		$LevelHolder.get_child(0).queue_free()
 	

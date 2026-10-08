@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dq8dv38i0ayx6" path="res://Levels/DevLevel/TestSchoolDoors.gd" id="4_6xnm1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2dwb"]
-size = Vector2(40, 4)
+size = Vector2(40, 8)
 
 [node name="DevLevel" type="Node2D" unique_id=1235299935]
 
@@ -26,7 +26,7 @@ zone_name = "Переместиться?"
 shape = SubResource("RectangleShape2D_t2dwb")
 
 [node name="Spawn TestSchoolDoors" type="Marker2D" parent="." unique_id=1838196682]
-position = Vector2(344, 116)
+position = Vector2(344, 120)
 gizmo_extents = 16.0
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=777401699]

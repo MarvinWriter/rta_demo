@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dinm8monmod7q"
+path="res://.godot/imported/key.dialogue-75544bba6a2fb6d898b3d51fcf6a306d.tres"
+
+[deps]
+
+source_file="res://Assets/Dialogs/key.dialogue"
+dest_files=["res://.godot/imported/key.dialogue-75544bba6a2fb6d898b3d51fcf6a306d.tres"]
+
+[params]
+
+defaults=true

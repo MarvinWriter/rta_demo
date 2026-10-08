@@ -2,5 +2,9 @@ extends InteractionZone
 
 
 func interaction():
-		label.text = "Пошёл нахуй"
-		print("Пошёл нахуй")
+	in_interaction = true
+	
+	label.text = "Пошёл нахуй"
+	print("Пошёл нахуй")
+	
+	in_interaction = false

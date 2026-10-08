@@ -38,7 +38,7 @@ func gamestate_machine():
 		GameState.EXPLORATION:
 			print("Режим исследования")
 		GameState.LOADING:
-			pass
+			print("Режим загрузки")
 		GameState.BATTLE_TRANSIT:
 			pass
 		GameState.BATTLE:

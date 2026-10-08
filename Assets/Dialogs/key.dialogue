@@ -1,0 +1,9 @@
+~ start
+На полу лежит ключь. Взять его?
+- Взять.
+	Вы взяли ключ.
+	set GameManager.test_flags.has_key = true
+	=> END
+- Оставить.
+	=> END
+=> END
