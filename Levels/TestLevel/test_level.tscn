@@ -61,7 +61,7 @@ shape = SubResource("CircleShape2D_t2dwb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Key" unique_id=1434875408]
 position = Vector2(-4.7683716e-07, 0)
-scale = Vector2(0.125, 0.125)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_7e6fp")
 
 [node name="DialogWindow" parent="Key" unique_id=38036521 instance=ExtResource("6_x0v55")]
