@@ -30,4 +30,4 @@ position = Vector2(344, 120)
 gizmo_extents = 16.0
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=777401699]
-position = Vector2(344, 284)
+position = Vector2(344, 352)

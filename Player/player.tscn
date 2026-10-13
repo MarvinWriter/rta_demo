@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c8qfxygwr5bw8" path="res://Assets/test_characters.png" id="1_l8h54"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ntmi"]
-radius = 8.0
-height = 24.0
+radius = 9.0
+height = 28.0
 
 [sub_resource type="Animation" id="Animation_gwnis"]
 length = 0.001

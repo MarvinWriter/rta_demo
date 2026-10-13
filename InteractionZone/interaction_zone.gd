@@ -12,10 +12,14 @@ var player: Player
 
 
 func _ready() -> void:
+	label.hide()
 	label.text = zone_name
 
 
 func _process(delta: float) -> void:
+	# Проверяем в зоне ли игрок, нажата кнопка и не находится ли он
+	# уже во взаимодействии для избежания повторных вызовов (по факту похуй,
+	# так как всё равно пришлось костылить)
 	if Input.is_action_just_pressed("interaction") and player_in_zone and not in_interaction:
 		interaction()
 

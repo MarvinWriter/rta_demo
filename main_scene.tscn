@@ -13,10 +13,11 @@ script = ExtResource("1_gyfs4")
 [node name="DevLevel" parent="LevelHolder" unique_id=1235299935 instance=ExtResource("1_0f027")]
 
 [node name="Player" parent="." unique_id=2068356474 instance=ExtResource("2_2c62f")]
-position = Vector2(344, 284)
+position = Vector2(344, 352)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1942788596]
-position = Vector2(0, -26)
+position = Vector2(0, -24)
+zoom = Vector2(2, 2)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1054339832]
 

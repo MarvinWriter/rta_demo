@@ -15,10 +15,10 @@ extends CanvasLayer
 @export var will_block_other_input: bool = true
 
 ## The action to use for advancing the dialogue
-@export var next_action: StringName = &"ui_accept"
+@export var next_action: StringName = &"accept"
 
 ## The action to use to skip typing the dialogue
-@export var skip_action: StringName = &"ui_cancel"
+@export var skip_action: StringName = &"cancel"
 
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
@@ -60,6 +60,8 @@ var mutation_cooldown: Timer = Timer.new()
 
 ## The label showing the name of the currently speaking character
 @onready var character_label: RichTextLabel = %CharacterLabel
+
+@onready var character_container: MarginContainer = %CharacterContainer
 
 ## The label showing the currently spoken dialogue
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
@@ -131,6 +133,7 @@ func apply_dialogue_line() -> void:
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
 
+	character_container.visible = not dialogue_line.character.is_empty()
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 

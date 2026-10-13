@@ -3,10 +3,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	$Player.facing_direction = Vector2.UP
 	GameManager.level_change_requested.connect(change_level)
 
-
+# Функция смены локации
 func change_level(path: String, spawn_point_name: String, facing: Vector2):
 	$UI/LoadingScreen.show()
 	$UI/LoadingScreen/AnimationPlayer.play("fade_in")
