@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://uky4o6t5a2m"]
 
+[ext_resource type="Script" uid="uid://yxcxryp0oikw" path="res://LoadingScreen/loading_screen.gd" id="1_7eg82"]
 [ext_resource type="FontFile" uid="uid://dpmv3vrc18g6s" path="res://Assets/Fonts/PixeloidSans-lxa3y.ttf" id="1_ojfhl"]
 
 [sub_resource type="Animation" id="Animation_ojfhl"]
@@ -7,7 +8,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Control/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -19,7 +20,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/HBoxContainer/Label:visible")
+tracks/1/path = NodePath("Control/MarginContainer/HBoxContainer/Label:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -31,7 +32,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/HBoxContainer/Label:text")
+tracks/2/path = NodePath("Control/MarginContainer/HBoxContainer/Label:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -46,7 +47,7 @@ resource_name = "fade_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Control/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -58,7 +59,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/HBoxContainer/Label:visible")
+tracks/1/path = NodePath("Control/MarginContainer/HBoxContainer/Label:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -73,7 +74,7 @@ resource_name = "fade_out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Control/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -85,7 +86,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/HBoxContainer/Label:visible")
+tracks/1/path = NodePath("Control/MarginContainer/HBoxContainer/Label:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -101,7 +102,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Control/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -113,7 +114,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/HBoxContainer/Label:visible")
+tracks/1/path = NodePath("Control/MarginContainer/HBoxContainer/Label:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -125,7 +126,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/HBoxContainer/Label:text")
+tracks/2/path = NodePath("Control/MarginContainer/HBoxContainer/Label:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -143,7 +144,10 @@ _data = {
 &"loading": SubResource("Animation_56vuc")
 }
 
-[node name="LoadingScreen" type="Control" unique_id=1634860794]
+[node name="LoadingScreen" type="CanvasLayer" unique_id=1815578215]
+script = ExtResource("1_7eg82")
+
+[node name="Control" type="Control" parent="." unique_id=981846264]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -151,7 +155,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1214504847]
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1214504847]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,26 +164,26 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.09411765, 0.078431375, 0.14509805, 0)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1850318750]
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1850318750]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1768879619]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1768879619]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_stretch_ratio = 2.0
 offset_transform_enabled = true
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=438034789]
+[node name="Label" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=438034789]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8
@@ -189,5 +193,6 @@ theme_override_font_sizes/font_size = 9
 text = "Загрузка..."
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1047953405]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=1047953405]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_o63ki")

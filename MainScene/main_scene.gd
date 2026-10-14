@@ -3,16 +3,16 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	$Player.facing_direction = Vector2.UP
 	GameManager.level_change_requested.connect(change_level)
+	LoadingScreen.animation_player.play("fade_out")
+	await LoadingScreen.animation_player.animation_finished
 
 # Функция смены локации
 func change_level(path: String, spawn_point_name: String, facing: Vector2):
-	$UI/LoadingScreen.show()
-	$UI/LoadingScreen/AnimationPlayer.play("fade_in")
-	await $UI/LoadingScreen/AnimationPlayer.animation_finished
-	$UI/LoadingScreen/AnimationPlayer.play("loading")
+	LoadingScreen.animation_player.play("fade_in")
+	await LoadingScreen.animation_player.animation_finished
+	LoadingScreen.animation_player.play("loading")
 	if $LevelHolder.get_child_count() > 0:
 		$LevelHolder.get_child(0).queue_free()
 	
@@ -23,8 +23,7 @@ func change_level(path: String, spawn_point_name: String, facing: Vector2):
 	var spawn_point = new_level.get_node(spawn_point_name)
 	$Player.global_position = spawn_point.global_position
 	$Player.facing_direction = facing
-	$UI/LoadingScreen/AnimationPlayer.play("fade_out")
-	await $UI/LoadingScreen/AnimationPlayer.animation_finished
-	$UI/LoadingScreen.hide()
+	LoadingScreen.animation_player.play("fade_out")
+	await LoadingScreen.animation_player.animation_finished
 	
 	GameManager.set_gamestate(GameManager.GameState.EXPLORATION)

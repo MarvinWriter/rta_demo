@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://b3y2tvacc0wid"]
+
+[ext_resource type="FontFile" uid="uid://bqyfinko1e7rf" path="res://Assets/Fonts/Ithaca.ttf" id="1_3w4mj"]
+[ext_resource type="Script" uid="uid://cu2a1de0p4uo2" path="res://MainMenu/main_menu.gd" id="1_5de1l"]
+[ext_resource type="FontFile" uid="uid://dpmv3vrc18g6s" path="res://Assets/Fonts/PixeloidSans-lxa3y.ttf" id="2_5de1l"]
+
+[node name="MainMenu" type="Control" unique_id=1768424335]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5de1l")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1305335518]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=838896406]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2058656902]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3w4mj")
+theme_override_font_sizes/font_size = 32
+text = "Rampant Teen Adventures: Demo Prologue"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=124438149]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2023927902]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=40586607]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="MenuButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=119187232]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons" unique_id=616349971]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "Начать игру"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons" unique_id=1212937987]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../AboutButton")
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "Настройки"
+alignment = 0
+
+[node name="AboutButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons" unique_id=1318839139]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../ExitButton")
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "Об игре"
+alignment = 0
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons" unique_id=1774201569]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+mouse_filter = 2
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons" unique_id=15813098]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../StartButton")
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "Выход"
+alignment = 0
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1347884506]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="VersionLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=733697449]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_3w4mj")
+theme_override_font_sizes/font_size = 16
+text = "Alpha 0.1.6"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=756982287]
+layout_mode = 2
+
+[node name="ConfirmExitDialog" type="PanelContainer" parent="MarginContainer/CenterContainer" unique_id=58920835]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/ConfirmExitDialog" unique_id=743759452]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/ConfirmExitDialog/MarginContainer" unique_id=2135475826]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/ConfirmExitDialog/MarginContainer/VBoxContainer" unique_id=208003566]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "Вы действительно хотите выйти?"
+
+[node name="ConfirmExitDialogButtons" type="HBoxContainer" parent="MarginContainer/CenterContainer/ConfirmExitDialog/MarginContainer/VBoxContainer" unique_id=2053262933]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="YesButton" type="Button" parent="MarginContainer/CenterContainer/ConfirmExitDialog/MarginContainer/VBoxContainer/ConfirmExitDialogButtons" unique_id=1400695758]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../NoButton")
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+button_mask = 0
+text = "Да"
+
+[node name="NoButton" type="Button" parent="MarginContainer/CenterContainer/ConfirmExitDialog/MarginContainer/VBoxContainer/ConfirmExitDialogButtons" unique_id=677521718]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../YesButton")
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+button_mask = 0
+text = "Нет"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/ConfirmExitDialog/MarginContainer/VBoxContainer/ConfirmExitDialogButtons/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/ConfirmExitDialog/MarginContainer/VBoxContainer/ConfirmExitDialogButtons/NoButton" to="." method="_on_no_button_pressed"]
