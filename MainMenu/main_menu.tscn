@@ -66,6 +66,7 @@ focus_neighbor_bottom = NodePath("../SettingsButton")
 mouse_filter = 2
 theme_override_fonts/font = ExtResource("2_5de1l")
 theme_override_font_sizes/font_size = 9
+action_mode = 0
 text = "Начать игру"
 alignment = 0
 
@@ -77,6 +78,7 @@ focus_neighbor_bottom = NodePath("../AboutButton")
 mouse_filter = 2
 theme_override_fonts/font = ExtResource("2_5de1l")
 theme_override_font_sizes/font_size = 9
+action_mode = 0
 text = "Настройки"
 alignment = 0
 
@@ -88,6 +90,7 @@ focus_neighbor_bottom = NodePath("../ExitButton")
 mouse_filter = 2
 theme_override_fonts/font = ExtResource("2_5de1l")
 theme_override_font_sizes/font_size = 9
+action_mode = 0
 text = "Об игре"
 alignment = 0
 
@@ -105,6 +108,8 @@ focus_neighbor_bottom = NodePath("../StartButton")
 mouse_filter = 2
 theme_override_fonts/font = ExtResource("2_5de1l")
 theme_override_font_sizes/font_size = 9
+action_mode = 0
+button_mask = 0
 text = "Выход"
 alignment = 0
 
@@ -118,7 +123,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("1_3w4mj")
 theme_override_font_sizes/font_size = 16
-text = "Alpha 0.1.6"
+text = "Alpha 0.1.7"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -160,6 +165,7 @@ focus_neighbor_right = NodePath("../NoButton")
 mouse_filter = 2
 theme_override_fonts/font = ExtResource("2_5de1l")
 theme_override_font_sizes/font_size = 9
+action_mode = 0
 button_mask = 0
 text = "Да"
 
@@ -170,6 +176,7 @@ focus_neighbor_left = NodePath("../YesButton")
 mouse_filter = 2
 theme_override_fonts/font = ExtResource("2_5de1l")
 theme_override_font_sizes/font_size = 9
+action_mode = 0
 button_mask = 0
 text = "Нет"
 

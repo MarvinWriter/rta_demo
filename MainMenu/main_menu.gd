@@ -7,12 +7,21 @@ func _ready() -> void:
 	%StartButton.grab_focus()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func buttons_disable():
+	for button in %MenuButtons.get_children():
+		if button == Button:
+			button.focus_mode = Control.FOCUS_NONE
+
+
+func buttons_enable():
+	for button in %MenuButtons.get_children():
+		if button == Button:
+			button.focus_mode = Control.FOCUS_ALL
 
 
 func _on_start_button_pressed() -> void:
+	buttons_disable()
+	%StartButton.disabled = true
 	LoadingScreen.animation_player.play("fade_in")
 	await LoadingScreen.animation_player.animation_finished
 	LoadingScreen.animation_player.play("loading")
@@ -27,17 +36,13 @@ func _on_about_button_pressed() -> void:
 
 
 func _on_exit_button_pressed() -> void:
-	for button in %MenuButtons.get_children():
-		if button == Button:
-			button.focus_mode = Control.FOCUS_NONE
+	buttons_disable()
 	%ConfirmExitDialog.show()
 	%ConfirmExitDialogButtons/NoButton.grab_focus()
 
 
 func _on_no_button_pressed() -> void:
-	for button in %MenuButtons.get_children():
-		if button == Button:
-			button.focus_mode = Control.FOCUS_ALL
+	buttons_enable()
 	%ConfirmExitDialog.hide()
 	%ExitButton.grab_focus()
 
