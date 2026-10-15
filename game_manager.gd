@@ -15,7 +15,7 @@ enum GameState {
 	CUTSCENE,
 }
 
-var current_gamestate := GameState.EXPLORATION
+var current_gamestate := GameState.MAIN_MENU
 
 var test_flags: Dictionary = {
 	"has_key": false,

@@ -8,24 +8,26 @@ func _ready() -> void:
 
 
 func buttons_disable():
-	for button in %MenuButtons.get_children():
-		if button == Button:
-			button.focus_mode = Control.FOCUS_NONE
+	%StartButton.focus_mode = Control.FOCUS_NONE
+	%SettingsButton.focus_mode = Control.FOCUS_NONE
+	%AboutButton.focus_mode = Control.FOCUS_NONE
+	$%ExitButton.focus_mode = Control.FOCUS_NONE
 
 
 func buttons_enable():
-	for button in %MenuButtons.get_children():
-		if button == Button:
-			button.focus_mode = Control.FOCUS_ALL
+	%StartButton.focus_mode = Control.FOCUS_ALL
+	%SettingsButton.focus_mode = Control.FOCUS_ALL
+	%AboutButton.focus_mode = Control.FOCUS_ALL
+	$%ExitButton.focus_mode = Control.FOCUS_ALL
 
 
 func _on_start_button_pressed() -> void:
 	buttons_disable()
-	%StartButton.disabled = true
 	LoadingScreen.animation_player.play("fade_in")
 	await LoadingScreen.animation_player.animation_finished
 	LoadingScreen.animation_player.play("loading")
 	get_tree().change_scene_to_file("res://MainScene/main_scene.tscn")
+
 
 func _on_settings_button_pressed() -> void:
 	pass # Replace with function body.
