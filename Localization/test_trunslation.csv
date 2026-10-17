@@ -1,0 +1,13 @@
+id,ru,en
+SETTINGS,Настройки,Settings
+MASTER,Общее,Master
+MUSIC,Музыка,Music
+SFX,Эффекты,SFX
+LANGUAGE,Язык,Language
+LANGUAGE_RUSSIAN,Русский,Russian
+LANGUAGE_ENGLISH,Английский,English
+FULLSCREEN_MODE,Полноэкранный режим,Fullscreen Mode
+FULLSCREEN_MODE_OFF,Откл.,Off
+FULLSCREEN_MODE_ON,Вкл.,On
+WINDOW_RESOLUTION,Разрешение окна,Window Resolution
+EXIT,Выйти,Exit

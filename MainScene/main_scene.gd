@@ -49,3 +49,8 @@ func set_camera_border():
 		$Player/Camera2D.limit_bottom = bottom_border
 		$Player/Camera2D.limit_left = left_border
 		$Player/Camera2D.limit_right = right_border
+	else:
+		$Player/Camera2D.limit_top = -10000000
+		$Player/Camera2D.limit_bottom = 10000000
+		$Player/Camera2D.limit_left = -10000000
+		$Player/Camera2D.limit_right = 10000000

@@ -30,7 +30,7 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_about_button_pressed() -> void:

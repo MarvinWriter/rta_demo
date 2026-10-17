@@ -17,6 +17,9 @@ enum GameState {
 
 var current_gamestate := GameState.MAIN_MENU
 
+var language_index: int = 0
+var resolution_index: int = 1
+
 var test_flags: Dictionary = {
 	"has_key": false,
 }

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://w17p6fio6vlj"
+path="res://.godot/imported/School year start snippet 1.mp3-cb7ac9cee49698c451a4de54ea3d3d25.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/School year start snippet 1.mp3"
+dest_files=["res://.godot/imported/School year start snippet 1.mp3-cb7ac9cee49698c451a4de54ea3d3d25.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
