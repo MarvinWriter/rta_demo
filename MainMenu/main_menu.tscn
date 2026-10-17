@@ -3,6 +3,13 @@
 [ext_resource type="FontFile" uid="uid://bqyfinko1e7rf" path="res://Assets/Fonts/Ithaca.ttf" id="1_3w4mj"]
 [ext_resource type="Script" uid="uid://cu2a1de0p4uo2" path="res://MainMenu/main_menu.gd" id="1_5de1l"]
 [ext_resource type="FontFile" uid="uid://dpmv3vrc18g6s" path="res://Assets/Fonts/PixeloidSans-lxa3y.ttf" id="2_5de1l"]
+[ext_resource type="Script" uid="uid://c78js6tf7nfwu" path="res://SettingsMenu/settings_menu.gd" id="4_ajn5b"]
+
+[sub_resource type="Theme" id="Theme_t2dwb"]
+PopupMenu/font_sizes/font_separator_size = 9
+PopupMenu/font_sizes/font_size = 9
+PopupMenu/font_sizes/title_font_size = 9
+PopupMenu/fonts/font = ExtResource("2_5de1l")
 
 [node name="MainMenu" type="Control" unique_id=1768424335]
 layout_mode = 3
@@ -183,9 +190,236 @@ action_mode = 0
 button_mask = 0
 text = "Нет"
 
+[node name="SettingsMenu" type="Control" parent="." unique_id=1042208551]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ajn5b")
+
+[node name="CenterContainer" type="CenterContainer" parent="SettingsMenu" unique_id=989302609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingsMenu/CenterContainer" unique_id=1155080110]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMenu/CenterContainer/PanelContainer" unique_id=1862810077]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer" unique_id=579914653]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="SettingsLabel" type="Label" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1544187139]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3w4mj")
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1681542872]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MasterVolume" type="HBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=156150325]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="MasterVolumeLabel" type="Label" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MasterVolume" unique_id=873615453]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "MASTER"
+vertical_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MasterVolume" unique_id=1067228063]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_top = NodePath("../../../SettingsConfirm/SettingsConfirmButton")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicVolume" type="HBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=548422845]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="MusicVolumeLabel" type="Label" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MusicVolume" unique_id=1965820839]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "MUSIC"
+vertical_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MusicVolume" unique_id=566781248]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXVolume" type="HBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1072833042]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="SFXVolumeLabel" type="Label" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/SFXVolume" unique_id=1261813590]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "SFX"
+vertical_alignment = 1
+
+[node name="SFXVolumeSlider" type="HSlider" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/SFXVolume" unique_id=1043078426]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Language" type="HBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=109541302]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="LanguageLabel" type="Label" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Language" unique_id=1841054759]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "LANGUAGE"
+vertical_alignment = 1
+
+[node name="LanguageOptionButton" type="OptionButton" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Language" unique_id=2099673809]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_t2dwb")
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+selected = 0
+item_count = 2
+popup/item_0/text = "Русский"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[node name="Fullscreen" type="HBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=731688107]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="FullscreenLabel" type="Label" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Fullscreen" unique_id=2082668472]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "FULLSCREEN_MODE"
+vertical_alignment = 1
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Fullscreen" unique_id=1697721354]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "FULLSCREEN_MODE_OFF"
+
+[node name="WindowResolution" type="HBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=998285610]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="WindowResolutionLabel" type="Label" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/WindowResolution" unique_id=176404529]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "WINDOW_RESOLUTION"
+vertical_alignment = 1
+
+[node name="WindowResolutionOptionButton" type="OptionButton" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/WindowResolution" unique_id=2122944088]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_t2dwb")
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+selected = 1
+item_count = 4
+popup/item_0/text = "640x360"
+popup/item_0/id = 0
+popup/item_1/text = "1280x720"
+popup/item_1/id = 1
+popup/item_2/text = "1920x1080"
+popup/item_2/id = 2
+popup/item_3/text = "2560x1440"
+popup/item_3/id = 3
+
+[node name="SettingsConfirm" type="HBoxContainer" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=877680784]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control" type="Control" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/SettingsConfirm" unique_id=483468216]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SettingsConfirmButton" type="Button" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/SettingsConfirm" unique_id=1790937313]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+focus_neighbor_bottom = NodePath("../../VBoxContainer/MasterVolume/MasterVolumeSlider")
+theme_override_fonts/font = ExtResource("2_5de1l")
+theme_override_font_sizes/font_size = 9
+text = "EXIT"
+autowrap_mode = 3
+
+[node name="Control2" type="Control" parent="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/SettingsConfirm" unique_id=1380954107]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons/AboutButton" to="." method="_on_about_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MarginContainer/CenterContainer/ConfirmExitDialog/MarginContainer/VBoxContainer/ConfirmExitDialogButtons/YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="MarginContainer/CenterContainer/ConfirmExitDialog/MarginContainer/VBoxContainer/ConfirmExitDialogButtons/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="value_changed" from="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MasterVolume/MasterVolumeSlider" to="SettingsMenu" method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MusicVolume/MusicVolumeSlider" to="SettingsMenu" method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/SFXVolume/SFXVolumeSlider" to="SettingsMenu" method="_on_sfx_volume_slider_value_changed"]
+[connection signal="item_selected" from="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Language/LanguageOptionButton" to="SettingsMenu" method="_on_language_option_button_item_selected"]
+[connection signal="toggled" from="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Fullscreen/FullscreenCheckBox" to="SettingsMenu" method="_on_fullscreen_check_box_toggled"]
+[connection signal="item_selected" from="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/WindowResolution/WindowResolutionOptionButton" to="SettingsMenu" method="_on_window_resolution_option_button_item_selected"]
+[connection signal="pressed" from="SettingsMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/SettingsConfirm/SettingsConfirmButton" to="." method="_on_settings_confirm_button_pressed"]

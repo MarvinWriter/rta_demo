@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$SettingsMenu.hide()
 	%ConfirmExitDialog.hide()
 	%StartButton.grab_focus()
 
@@ -11,7 +12,7 @@ func buttons_disable():
 	%StartButton.focus_mode = Control.FOCUS_NONE
 	%SettingsButton.focus_mode = Control.FOCUS_NONE
 	%AboutButton.focus_mode = Control.FOCUS_NONE
-	$%ExitButton.focus_mode = Control.FOCUS_NONE
+	%ExitButton.focus_mode = Control.FOCUS_NONE
 
 
 func buttons_enable():
@@ -30,11 +31,21 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_settings_button_pressed() -> void:
-	pass
+	buttons_disable()
+	$SettingsMenu.show()
+	$SettingsMenu.master_volume_slider.grab_focus()
+
+
+func _on_settings_confirm_button_pressed():
+	buttons_enable()
+	$SettingsMenu.hide()
+	%SettingsButton.grab_focus()
 
 
 func _on_about_button_pressed() -> void:
-	pass # Replace with function body.
+	buttons_enable()
+	$SettingsMenu.hide()
+	%SettingsButton.grab_focus()
 
 
 func _on_exit_button_pressed() -> void:

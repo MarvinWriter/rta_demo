@@ -2,6 +2,7 @@ extends Control
 
 
 @onready var settings_confirm_button: Button = %SettingsConfirmButton
+@onready var master_volume_slider: HSlider = %MasterVolumeSlider
 
 
 # Called when the node enters the scene tree for the first time.
