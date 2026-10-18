@@ -4,6 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$SettingsMenu.hide()
+	$SettingsMenu.get_node_or_null("%SettingsConfirmButton").pressed.connect(_on_settings_confirm_button_pressed)
 	%ConfirmExitDialog.hide()
 	%StartButton.grab_focus()
 
