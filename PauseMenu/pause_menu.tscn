@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bl3ov6gtdr40f"]
+
+[ext_resource type="Script" uid="uid://bctf5440nx3pu" path="res://PauseMenu/pause_menu.gd" id="1_tfo3q"]
+[ext_resource type="FontFile" uid="uid://dpmv3vrc18g6s" path="res://Assets/Fonts/PixeloidSans-lxa3y.ttf" id="1_tobvk"]
+[ext_resource type="PackedScene" uid="uid://b5qmq74qqa7pl" path="res://SettingsMenu/settings_menu.tscn" id="3_3pbqp"]
+
+[node name="PauseMenu" type="Control" unique_id=152944374]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfo3q")
+
+[node name="PauseOverlay" type="CenterContainer" parent="." unique_id=1801078273]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseOverlay" unique_id=1228305775]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseOverlay/PanelContainer" unique_id=91986867]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseOverlay/PanelContainer/MarginContainer" unique_id=47648606]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PauseLabel" type="Label" parent="PauseOverlay/PanelContainer/MarginContainer/VBoxContainer" unique_id=1112825367]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_tobvk")
+theme_override_font_sizes/font_size = 9
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseOverlay/PanelContainer/MarginContainer/VBoxContainer" unique_id=1871050497]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="PauseOverlay/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=213885335]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_tobvk")
+theme_override_font_sizes/font_size = 9
+text = "RESUME"
+
+[node name="SettingsButton" type="Button" parent="PauseOverlay/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=864135369]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_tobvk")
+theme_override_font_sizes/font_size = 9
+text = "SETTINGS"
+
+[node name="InMainMenuButton" type="Button" parent="PauseOverlay/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=625177510]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_tobvk")
+theme_override_font_sizes/font_size = 9
+text = "IN_MAIN_MENU"
+
+[node name="SettingsMenu" parent="." unique_id=1042208551 instance=ExtResource("3_3pbqp")]
+layout_mode = 1
+
+[connection signal="pressed" from="PauseOverlay/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PauseOverlay/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/InMainMenuButton" to="." method="_on_in_main_menu_button_pressed"]
