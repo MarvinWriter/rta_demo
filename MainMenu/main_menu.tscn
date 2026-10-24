@@ -34,7 +34,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_3w4mj")
 theme_override_font_sizes/font_size = 32
-text = "Rampant Teen Adventures: Demo Prologue"
+text = "Rampant Teen Adventures: Prologue"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=124438149]
 layout_mode = 2

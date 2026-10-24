@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d01s0xrssbeav"]
+
+[ext_resource type="Script" uid="uid://bkergf11axn6v" path="res://BattleSystem/BattleCharacter/battle_character.gd" id="1_42nba"]
+[ext_resource type="Texture2D" uid="uid://c8qfxygwr5bw8" path="res://Assets/test_characters.png" id="2_wrbdl"]
+
+[node name="Abas" type="Node2D" unique_id=1671688369]
+script = ExtResource("1_42nba")
+character_name = "Абас"
+max_hp = 999
+initiative = 20
+damage = 67
+defense = 69
+metadata/_custom_type_script = "uid://bkergf11axn6v"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458454932]
+texture = ExtResource("2_wrbdl")
+offset = Vector2(0, -24)
+region_enabled = true
+region_rect = Rect2(272, 48, 32, 48)

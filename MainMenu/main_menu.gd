@@ -47,9 +47,7 @@ func _on_settings_confirm_button_pressed():
 
 
 func _on_about_button_pressed() -> void:
-	buttons_enable()
-	$SettingsMenu.hide()
-	%SettingsButton.grab_focus()
+	pass
 
 
 func _on_quit_button_pressed() -> void:

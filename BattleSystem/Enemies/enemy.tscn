@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ddc0bypfm5gyg"]
+
+[ext_resource type="Script" uid="uid://cmoyvkyssxwep" path="res://BattleSystem/Enemies/enemy.gd" id="1_ingql"]
+[ext_resource type="Texture2D" uid="uid://c8qfxygwr5bw8" path="res://Assets/test_characters.png" id="2_s4fbs"]
+
+[node name="Enemy" type="Node2D" unique_id=15923012]
+script = ExtResource("1_ingql")
+metadata/_custom_type_script = "uid://bkergf11axn6v"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1713796824]
+texture = ExtResource("2_s4fbs")
+offset = Vector2(0, -24)
+region_enabled = true
+region_rect = Rect2(48, 96, 32, 48)

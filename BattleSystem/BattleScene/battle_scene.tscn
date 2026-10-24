@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://j42eijra8qs8"]
+
+[ext_resource type="Script" uid="uid://cpkc15r6x7ydf" path="res://BattleSystem/BattleScene/battle_scene.gd" id="1_xea77"]
+[ext_resource type="FontFile" uid="uid://dpmv3vrc18g6s" path="res://Assets/Fonts/PixeloidSans-lxa3y.ttf" id="2_l32ex"]
+
+[node name="BattleScene" type="Node2D" unique_id=1943276448]
+script = ExtResource("1_xea77")
+player_team_list = Array[String](["abas"])
+enemy_team_list = Array[String](["enemy", "enemy", "enemy", "enemy"])
+
+[node name="BattleUI" type="CanvasLayer" parent="." unique_id=98502783]
+
+[node name="Control" type="Control" parent="BattleUI" unique_id=281168125]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleUI/Control" unique_id=1597768636]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 235
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/Control/MarginContainer" unique_id=1612664098]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer" unique_id=117265246]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer" unique_id=622064065]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=235752870]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1577423707]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=714779036]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=1175489100]
+layout_mode = 2
+
+[node name="AttackButton" type="Button" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=860159118]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_l32ex")
+theme_override_font_sizes/font_size = 9
+text = "Атака"
+
+[node name="SkillButton" type="Button" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1933843566]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_l32ex")
+theme_override_font_sizes/font_size = 9
+text = "Навыки"
+
+[node name="DefenseButton" type="Button" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1552393994]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_l32ex")
+theme_override_font_sizes/font_size = 9
+text = "Защита"
+
+[node name="EscapeButton" type="Button" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=854440007]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_l32ex")
+theme_override_font_sizes/font_size = 9
+text = "Побег"
+
+[node name="PanelContainer2" type="PanelContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=328007903]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer2" unique_id=1900408607]
+custom_maximum_size = Vector2(322, 110)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer2/MarginContainer" unique_id=721389495]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_l32ex")
+theme_override_font_sizes/normal_font_size = 9
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer2/MarginContainer" unique_id=1169306040]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/ScrollContainer" unique_id=705717080]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/Control/MarginContainer/HBoxContainer" unique_id=1122866604]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="TestBattleBG" type="Node2D" parent="." unique_id=1154265069]
+
+[node name="ColorRect" type="ColorRect" parent="TestBattleBG" unique_id=1425077086]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.24592268, 0.18672797, 0.32315758, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="TestBattleBG" unique_id=1344147097]
+position = Vector2(-80, 0)
+scale = Vector2(1.25, 1)
+color = Color(0.48164296, 0.38873792, 0.60217285, 1)
+polygon = PackedVector2Array(64, 360, 576, 360, 575.9841, 263.97617, 440, 60, 200, 60, 63.997437, 264.00385)
+
+[node name="ColorRect2" type="ColorRect" parent="TestBattleBG" unique_id=386980739]
+visible = false
+offset_top = 240.0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.71259135, 0.74055403, 0.89331937, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="TestBattleBG" unique_id=606812554]
+visible = false
+offset_left = 5.0
+offset_top = 245.0
+offset_right = 635.0
+offset_bottom = 355.0
+color = Color(0.076010026, 0.050600003, 0.22, 1)
+
+[node name="PlayerTeamPositions" type="Node2D" parent="." unique_id=389457064]
+position = Vector2(208, 124)
+
+[node name="PointA" type="Marker2D" parent="PlayerTeamPositions" unique_id=210579676]
+position = Vector2(0, 96)
+gizmo_extents = 16.0
+
+[node name="PointB" type="Marker2D" parent="PlayerTeamPositions" unique_id=1268312831]
+position = Vector2(0, 64)
+gizmo_extents = 16.0
+
+[node name="PointC" type="Marker2D" parent="PlayerTeamPositions" unique_id=191054711]
+position = Vector2(0, 32)
+gizmo_extents = 16.0
+
+[node name="PointD" type="Marker2D" parent="PlayerTeamPositions" unique_id=1656609241]
+gizmo_extents = 16.0
+
+[node name="PlayerTeam" type="Node2D" parent="." unique_id=1674974938]
+
+[node name="EnemyTeamPositions" type="Node2D" parent="." unique_id=2140989395]
+position = Vector2(432, 124)
+
+[node name="PointA" type="Marker2D" parent="EnemyTeamPositions" unique_id=1029366926]
+position = Vector2(0, 96)
+gizmo_extents = 16.0
+
+[node name="PointB" type="Marker2D" parent="EnemyTeamPositions" unique_id=57615595]
+position = Vector2(0, 64)
+gizmo_extents = 16.0
+
+[node name="PointC" type="Marker2D" parent="EnemyTeamPositions" unique_id=1430526747]
+position = Vector2(0, 32)
+gizmo_extents = 16.0
+
+[node name="PointD" type="Marker2D" parent="EnemyTeamPositions" unique_id=1711903867]
+gizmo_extents = 16.0
+
+[node name="EnemyTeam" type="Node2D" parent="." unique_id=28676684]
+
+[connection signal="pressed" from="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" to="." method="_on_attack_button_pressed"]
