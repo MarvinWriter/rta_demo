@@ -6,10 +6,9 @@
 [node name="Abas" type="Node2D" unique_id=1671688369]
 script = ExtResource("1_42nba")
 character_name = "Абас"
-max_hp = 999
+max_hp = 1000
 initiative = 20
-damage = 67
-defense = 69
+damage = 1
 metadata/_custom_type_script = "uid://bkergf11axn6v"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1458454932]

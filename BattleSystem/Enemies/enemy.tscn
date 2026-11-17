@@ -5,6 +5,8 @@
 
 [node name="Enemy" type="Node2D" unique_id=15923012]
 script = ExtResource("1_ingql")
+max_hp = 1000
+damage = 30
 metadata/_custom_type_script = "uid://bkergf11axn6v"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1713796824]

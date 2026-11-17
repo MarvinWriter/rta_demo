@@ -64,6 +64,7 @@ layout_mode = 2
 
 [node name="AttackButton" type="Button" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=860159118]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(70, 22)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l32ex")
@@ -72,6 +73,7 @@ text = "Атака"
 
 [node name="SkillButton" type="Button" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1933843566]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(70, 22)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l32ex")
@@ -80,6 +82,7 @@ text = "Навыки"
 
 [node name="DefenseButton" type="Button" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1552393994]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(70, 22)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l32ex")
@@ -88,6 +91,8 @@ text = "Защита"
 
 [node name="EscapeButton" type="Button" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=854440007]
 unique_name_in_owner = true
+visible = false
+custom_maximum_size = Vector2(70, 22)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_l32ex")
@@ -107,7 +112,8 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer2/MarginContainer" unique_id=721389495]
+[node name="ActionLogLabel" type="RichTextLabel" parent="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer2/MarginContainer" unique_id=721389495]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_l32ex")
 theme_override_font_sizes/normal_font_size = 9
@@ -197,3 +203,4 @@ gizmo_extents = 16.0
 [node name="EnemyTeam" type="Node2D" parent="." unique_id=28676684]
 
 [connection signal="pressed" from="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/AttackButton" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="BattleUI/Control/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DefenseButton" to="." method="_on_defense_button_pressed"]
